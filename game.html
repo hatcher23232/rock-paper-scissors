@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+       let score = 0;
+        function computerPlay(){
+            let randNum=Math.ceil(Math.random()*3);
+            console.log(randNum);
+            if (randNum==1) {
+                return "rock";
+            } 
+            else if (randNum==2) {
+                return "paper";
+            } 
+            else if (randNum==3) {
+                return "scissors";
+            }
+        }
+        function singleRound(playerSelection, computerSelection){
+            if(playerSelection == computerSelection){
+                score += 0;
+                return `Tie: You choose ${playerSelection}, the computer choose ${computerSelection}`; 
+            }else if(playerSelection == "rock" && computerSelection == "paper"){
+                score -= 5;
+                return `Loss: you choose ${playerSelection}, the computer choose ${computerSelection}`;
+            }else if(playerSelection == "rock" && computerSelection == "scissors"){
+                score += 50;
+                return `win: you choose ${playerSelection}, the computer choose ${computerSelection}`;0
+            }else if(playerSelection == "paper" && computerSelection == "rock"){
+                score += 50;
+                return `win: you choose ${playerSelection}, the computer choose ${computerSelection}`;  
+            }else if(playerSelection == "paper" && computerSelection == "scissors"){
+                score -= 5;
+                return `loss: you choose ${playerSelection}, the computer choose ${computerSelection}`;  
+            }else if(playerSelection == "scissors" && computerSelection == "rock"){
+                score -= 5;
+                return `loss: you choose ${playerSelection}, the computer choose ${computerSelection}`;  
+            }else if(playerSelection == "scissors" && computerSelection == "paper"){
+                score += 50;
+                return `win: you choose ${playerSelection}, the computer choose ${computerSelection}`;  
+            }
+        }
+        function gamePlay(){
+            alert(`Round 1: Score: ${score}`);
+            let playerChoice = prompt("Choose Rock Paper or Scissors").toLowerCase();
+            let computerChoice = computerPlay();
+            console.log(singleRound(playerChoice,computerChoice));
+            
+            alert(`round 2: Score: ${score}`);
+            playerChoice = prompt("Choose Rock Paper or Scissors").toLowerCase();
+            computerChoice = computerPlay();
+            console.log(singleRound(playerChoice,computerChoice));
+            
+            alert(`round 3: Score: ${score}`);
+            playerChoice = prompt("Choose Rock Paper or Scissors").toLowerCase();
+            computerChoice = computerPlay();
+            console.log(singleRound(playerChoice,computerChoice));
+            alert(`Final Score: ${score}`);
+        
+            alert(`round 4: Score: ${score}`);
+            playerChoice = prompt("Choose Rock Paper or Scissors").toLowerCase();
+            computerChoice = computerPlay();
+            console.log(singleRound(playerChoice,computerChoice));
+
+            alert(`round 5: Score: ${score}`);
+            playerChoice = prompt("Choose Rock Paper or Scissors").toLowerCase();
+            computerChoice = computerPlay();
+            console.log(singleRound(playerChoice,computerChoice));
+        
+            alert(`round 6: Score: ${score}`);
+            playerChoice = prompt("Choose Rock Paper or Scissors").toLowerCase();
+            computerChoice = computerPlay();
+            console.log(singleRound(playerChoice,computerChoice));
+        }
+        gamePlay();
+   </script> 
+   <main>
+   </main>
+</body>
+</html>
