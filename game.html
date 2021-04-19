@@ -27,22 +27,22 @@
                 score += 0;
                 return `Tie: You choose ${playerSelection}, the computer choose ${computerSelection}`; 
             }else if(playerSelection == "rock" && computerSelection == "paper"){
-                score -= 5;
+                score -= 8;
                 return `Loss: you choose ${playerSelection}, the computer choose ${computerSelection}`;
             }else if(playerSelection == "rock" && computerSelection == "scissors"){
-                score += 50;
+                score += 80;
                 return `win: you choose ${playerSelection}, the computer choose ${computerSelection}`;0
             }else if(playerSelection == "paper" && computerSelection == "rock"){
-                score += 50;
+                score += 80;
                 return `win: you choose ${playerSelection}, the computer choose ${computerSelection}`;  
             }else if(playerSelection == "paper" && computerSelection == "scissors"){
-                score -= 5;
+                score -= 8;
                 return `loss: you choose ${playerSelection}, the computer choose ${computerSelection}`;  
             }else if(playerSelection == "scissors" && computerSelection == "rock"){
-                score -= 5;
+                score -= 8;
                 return `loss: you choose ${playerSelection}, the computer choose ${computerSelection}`;  
             }else if(playerSelection == "scissors" && computerSelection == "paper"){
-                score += 50;
+                score += 80;
                 return `win: you choose ${playerSelection}, the computer choose ${computerSelection}`;  
             }
         }
